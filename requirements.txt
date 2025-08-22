@@ -3,3 +3,5 @@ pandas
 numpy
 plotly
 streamlit_javascript
+pytrends==4.10.0
+
