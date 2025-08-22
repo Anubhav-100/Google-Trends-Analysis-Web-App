@@ -4,10 +4,7 @@ numpy
 plotly
 streamlit_javascript
 pytrends
-subprocess
 geopandas
-os
-textwrap
 
 
 
