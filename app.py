@@ -2,7 +2,6 @@ import streamlit as st
 import Home, Dashboard, Contact, About
 from navbar import render_navbar
 import os
-from streamlit_javascript import st_javascript
 
 st.set_page_config(page_title="GoogleTrendApp", layout="wide")
 
