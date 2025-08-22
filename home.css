@@ -149,7 +149,8 @@ h1 {
 ----------------------------*/
 @media screen and (max-width: 768px) {
     .stButton > button {
-        width: 100% !important;
+        width: auto !important;
+        max-width: 100% !important;
     }
 
     h1 {
