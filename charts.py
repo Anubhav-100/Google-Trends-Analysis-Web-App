@@ -98,10 +98,10 @@ def plot_donut(time_data, keywords):
 
 def plot_map(region_data, selected_keyword, selected_geo):
     if selected_geo == '':
-        gdf = gpd.read_file("C:/Users/ANUBHAV/OneDrive/Desktop/GoogleTrendsApp/data/ne_110m_admin_0_countries.shp")
+        gdf = gpd.read_file("data/ne_110m_admin_0_countries.shp")
         gdf = gdf.rename(columns={"ADMIN": "geoname"})
     else:
-        gdf = gpd.read_file("C:/Users/ANUBHAV/OneDrive/Desktop/GoogleTrendsApp/data/ne_10m_admin_1_states_provinces.shp")
+        gdf = gpd.read_file("data/ne_10m_admin_1_states_provinces.shp")
         gdf = gdf[gdf["iso_a2"] == selected_geo]
         gdf = gdf.rename(columns={"name": "geoname"})
     merged = gdf.merge(region_data, on="geoname", how="left")
