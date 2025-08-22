@@ -59,6 +59,10 @@ div.stTextInput:hover > label {
 /*----------------------------
    Button
 ----------------------------*/
+.stElementContainer {
+   width: auto !important;
+}
+
 .stButton > button {
     font-size: clamp(0.9rem, 2vw, 16px);
     background-color: #131312;
