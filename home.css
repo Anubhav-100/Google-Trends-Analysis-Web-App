@@ -73,6 +73,7 @@ div.stTextInput:hover > label {
     box-shadow: 0 0 clamp(6px, 1vw, 10px) #000;
     transition: all 0.3s ease;
     margin: clamp(1rem, 5vh, 3rem) auto 0 auto;
+    width:auto !important;
     display: flex;
     justify-content: center;
     align-items: center;
