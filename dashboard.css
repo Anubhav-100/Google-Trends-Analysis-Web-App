@@ -92,7 +92,7 @@ h1 {
     padding-bottom: 1rem !important;
 }
 
-.st-emotion-cache-1t8vfw5 .st-emotion-cache-gi0tri {
+[data-testid="stHeaderActionElements"] {
     display: none !important;
 }
 
