@@ -1,0 +1,56 @@
+.block-container {
+    margin: 0rem !important;
+    width: 90% !important;
+    max-width: 100% !important;
+    padding-top: 0 !important;
+    padding-left: clamp(1rem, 2vw, 2rem) !important;
+    padding-right: clamp(1rem, 2vw, 2rem) !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+[data-testid="stHeader"] {
+    display: none;
+}
+
+.stApp {
+    padding-top: 0rem !important;
+    height: 100vh;
+    width: 100vw !important;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+    ),
+    url("https://media.istockphoto.com/id/1338907882/photo/web-contact-us-icons-on-blue-background-contact-us-cutomer-support-concept-copy-space-website.webp?b=1&s=170667a&w=0&k=20&c=-Hc2ZLxqYQZ8FQtFnPogx8BjM6X57eqUaiYKx1zv4sc=");
+    background-size: cover;
+    background-position: right center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px) {
+    .block-container {
+        width: 95% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .block-container {
+        width: 100% !important;
+        padding-left: 1rem !important; 
+        padding-right: 1rem !important;
+    }
+
+    .stVerticalBlock {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto;
+        gap: 0.5rem !important;
+    }
+
+    .stApp {
+        background-position: center center !important;
+    }
+}

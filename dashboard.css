@@ -1,0 +1,164 @@
+.stButton > button {
+    font-size: clamp(0.7rem, 2.5vw, 1.2rem);   
+    padding: clamp(0.1rem, 1.5vw, 0.8rem) clamp(0.5rem, 3vw, 1.2rem);
+    border-radius: clamp(0.4rem, 1vw, 0.8rem);
+
+    /* Adjusted for 3 columns */
+    width: clamp(6.5rem, 20vw, 10rem); 
+    height: clamp(2rem, 6vw, 4rem); 
+
+    font-weight: bolder;
+    background-color: #131312;
+    line-height: 0.8;
+    color: #ffffff;
+    box-shadow: 0 0 clamp(0.4rem, 1vw, 0.8rem) rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+    margin-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.stButton > button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 0 clamp(0.3rem, 1vw, 0.7rem) #0d00ff;
+    cursor: pointer;
+}
+
+div.stSelectbox {
+    width: 95%;
+    max-width: clamp(300px, 80vw, 800px);
+    margin: 0.5rem 0 !important;
+    margin-bottom: 0rem !important;
+    background-color:#000000;
+    padding: 0 0.25rem;
+    border-radius: clamp(10px, 2vw, 15px);
+    box-shadow: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+div.stSelectbox > label {
+    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: block;
+    padding: 0 0.25rem !important;
+}
+
+div[data-baseweb="select"] > div {
+    background: #fff;
+    color: #ff0000;
+    font-weight: 600;
+    height:auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: clamp(1rem, 2vw, 20px);
+    border-radius: clamp(6px, 1vw, 8px);
+    border: 1px solid #000;
+    box-shadow: 0 0 clamp(4px, 1vw, 6px) #000000d0;
+    transition: 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div[data-baseweb="select"] > div > div{
+    padding: 0.5rem 0.75rem !important;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.3rem) !important;
+    line-height: 1.6;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+h1 {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    font-size: clamp(1.5rem, 5vw, 3.5rem) !important; 
+    line-height: 1.2;
+    color: #ffffff !important;
+    padding-top: 0 !important;
+    margin-top: clamp(0px, 1vw, 1.4rem) !important;
+    padding-bottom: 1rem !important;
+}
+
+.st-emotion-cache-1t8vfw5 .st-emotion-cache-gi0tri {
+    display: none !important;
+}
+
+@media (max-width: 769px) {
+
+    div[data-testid="stVerticalBlock"]:has(.btn-grid-sentinel)
+        div[data-testid="stHorizontalBlock"] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important; /* 3 columns */
+        gap: 0rem !important;
+        justify-items: center !important; 
+    }
+
+    /* Make each column take full available width of its grid cell */
+    div[data-testid="stVerticalBlock"]:has(.btn-grid-sentinel)
+        div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+        width: auto !important;
+        flex: 1 1 0 !important;
+        max-width: none !important;
+    }
+
+    /* Make Streamlit buttons fill their third-row neatly on mobile */
+    div[data-testid="stVerticalBlock"]:has(.btn-grid-sentinel) .stButton > button {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Ensure sentinel doesn't occupy space visually */
+    .btn-grid-sentinel {
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        display: block !important;
+    }
+
+    /* Also hide the tiny iframe again in mobile media context */
+    iframe[src*="streamlit_javascript"] {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        border: 0 !important;
+    }
+
+    .stButton > button {
+        width: 100% !important;    
+        max-width: none !important; 
+        line-height: 1; 
+        margin: 0 !important;
+    }
+
+    div.stSelectbox {
+        width: 100% !important;
+        max-width: none !important;  
+        margin: 0.1rem auto !important;
+    }
+
+    div[data-baseweb="select"] > div > div{
+        padding: 0rem 0.75rem !important;
+    }
+
+    h1 {
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+        font-size: clamp(1.5rem, 5vw, 3.5rem) !important; 
+        line-height: 1.2;
+        color: #ffffff !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+}

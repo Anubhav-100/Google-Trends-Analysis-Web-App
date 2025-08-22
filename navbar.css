@@ -1,0 +1,180 @@
+/* === Header and Navbar === */
+.header {
+    padding: 0 clamp(1rem, 4vw, 4rem);
+    height: clamp(0.5rem, 3.5vh, 5.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    z-index: 999;
+    flex-wrap: wrap;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    flex: 1;
+    position: relative;
+}
+
+/* Navbar List */
+.navbar-list {
+    display: flex;
+    gap: clamp(1rem, 4vw, 4rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.navbar-list li {
+    display: flex;
+    align-items: center;
+}
+
+/* Nav Buttons */
+.nav-button {
+    font-size: clamp(1.2rem, 1.65vw, 1.65rem)!important;
+    font-weight: 400;
+    background: none;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    padding: clamp(0.2rem, 0.5vh, 0.5rem) clamp(0.3rem, 1vw, 0.8rem);
+    margin: 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+    color: #f1f1f1;
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #003cffc3;
+    border-radius: 5px;
+}
+
+/* Logo */
+.logo-img {
+    height: clamp(2rem, 4vh, 4rem);
+    width: clamp(8rem, 13vw, 13rem);
+    margin-right: 1rem;
+    align-items: center;  
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger span {
+    height: clamp(1.5px, 0.2vh, 2.5px);
+    width: clamp(20px, 2.5vw, 25px);
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: 0.4s;
+    line-height: 0.3;
+}
+
+/* === Responsive Navbar === */
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .hamburger + .navbar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 1rem;
+    border-radius: 8px;
+    position: absolute;
+    top: clamp(2rem, 6vh, 4rem);
+    right: 1rem;
+    z-index: 1000;
+    line-height: 0.3;
+}
+
+body {
+    padding: 0 clamp(0.3rem, 0.5vw, 1rem);
+}
+
+/* === Responsive Media Queries === */
+@media screen and (max-width: 769px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
+    }
+
+    .navbar-list {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: clamp(1rem, 2vw, 2rem);
+        background-color: rgba(255, 238, 0, 0.97);
+        padding: clamp(1rem, 2vw, 2rem);
+        border-radius: 8px;
+        position: absolute;
+        top: clamp(3rem, 6vh, 4rem);
+        right: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-button {
+        font-size: clamp(1rem, 1.3vw, 1.3rem);
+        padding: clamp(0.4rem, 0.6vh, 0.6rem) clamp(0.5rem, 0.8vw, 0.8rem);
+        width: 100%;
+        text-align: right;
+    }
+
+    .header {
+        flex-direction: row;
+        background-color: rgb(0, 0, 0);
+      
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .navbar-list {
+        gap: clamp(0.4rem, 1.2vw, 0.6rem);
+        padding: clamp(0.6rem, 1.2vw, 1rem);
+        border-radius: 6px;
+    }
+    .hamburger span {
+        width: clamp(18px, 4vw, 20px);
+        height: clamp(3px, 0.5vh, 4px);
+        margin: 0;
+    }
+    .nav-button {
+        font-size: clamp(0.9rem, 1vw, 1.1rem);
+        padding: clamp(0.4rem, 0.5vh, 0.6rem) clamp(0.5rem, 0.6vw, 0.8rem);
+    }
+}

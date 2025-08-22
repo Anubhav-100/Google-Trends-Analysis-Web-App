@@ -1,0 +1,141 @@
+.contact-section {
+    padding: clamp(1rem, 2vw, 2rem);
+    font-family: 'Segoe UI', sans-serif;
+    color: #050505;
+    background-color: transparent;
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.1vw, 3rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: clamp(0.5rem, 0.5vh, 3rem);
+}
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.65);
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+    padding: clamp(1rem, 2vw, 2rem);
+    border-radius: clamp(0.8rem, 1.5vw, 1.2rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+    gap: clamp(1rem, 2vw, 2rem);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 120rem;
+    height: auto;
+}
+
+.profile-row:hover {
+    box-shadow: 0 0 1.5rem #00c6ff, 0 0 3rem #00c6ff;
+    transform: translateY(-6px);
+}
+
+.profile-left {
+    flex: 0 0 clamp(140px, 18vw, 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: clamp(10rem, 18vw, 14rem);
+    height: clamp(10rem, 18vw, 14rem);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00c6ff;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+    border-color: #f97316;
+    box-shadow: 0 0 1rem #f97316;
+    transform: scale(1.08);
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
+    color: #00c6ff;
+    font-weight: 800;
+    transition: color 0.3s ease;
+}
+
+.profile-details h2:hover {
+    color: #f97316;
+}
+
+.role {
+    font-style: italic;
+    color: #df0707;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    margin: 0.4rem 0 1rem 0;
+}
+
+.contact-info {
+    font-size: clamp(1.1rem, 1.3vw, 2rem);
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: clamp(0.8rem, 1.5vw, 1.2rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+    padding: clamp(1rem, 2vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    transition: all 0.3s ease;
+    gap: clamp(0.3rem, 0.8vw, 0.6rem);
+}
+
+.contact-info p {
+    margin: 0.2rem 0;
+}
+
+.contact-info:hover {
+    box-shadow: 0 0 1.5rem #00c6ff, 0 0 3rem #00c6ff;
+    transform: translateY(-6px);
+}
+
+a {
+    color: #4fd1c5;
+    font-weight: 600;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f97316;
+    text-decoration: underline;
+}
+
+/* Responsive - Stack for Small Screens */
+@media (max-width: 768px) {
+    .profile-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-left {
+        flex: unset;
+        margin-bottom: 1rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .contact-info {
+        width: 100%;
+        max-width: 100%;
+    }
+}

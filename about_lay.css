@@ -1,0 +1,60 @@
+.block-container {
+    margin: 0rem !important;
+    width: 90% !important;
+    max-width: 100% !important;
+    padding-top: 0 !important;
+    padding-left: clamp(1rem, 2vw, 2rem) !important;
+    padding-right: clamp(1rem, 2vw, 2rem) !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Hide Streamlit header */
+[data-testid="stHeader"] {
+    display: none;
+}
+
+/* App background */
+.stApp {
+    padding-top: 0rem !important;
+    height: 100vh;
+    width: 100vw !important;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+    ),
+    url("https://thumbs.dreamstime.com/b/trendy-background-digital-data-chart-analytics-business-trends-economical-concept-template-generative-ai-320546448.jpg");
+    background-size: cover;
+    background-position: right center;  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Tablet view */
+@media screen and (max-width: 1024px) {
+    .block-container {
+        width: 95% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    .block-container {
+        width: 100% !important;
+        padding-left: 1rem !important;  
+        padding-right: 1rem !important;  
+    }
+
+    .stVerticalBlock {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto;
+        gap: 0.5rem !important;
+    }
+
+    .stApp {
+        background-position: center center !important;
+    }
+}

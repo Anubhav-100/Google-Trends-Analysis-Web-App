@@ -1,0 +1,52 @@
+.block-container {
+    margin: 0rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: clamp(2rem, 8vh, 3rem) !important;
+    padding-left: clamp(2rem, 60vw, 75rem) !important;
+    padding-right: clamp(0.5rem, 2vw, 1rem) !important;
+}
+
+@media screen and (max-width: 768px) {
+    .block-container {
+        padding-left: 0rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+[data-testid="stHeader"] {
+    display: none;
+}
+
+.stApp {
+    padding-top: 0rem !important;
+    height: 100vh;
+    width: 100vw !important;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+    ),
+    url("https://i.postimg.cc/59qDXpYS/Copy-of-Untitled.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 768px) {
+    .block-container {
+        padding-left: clamp(2rem, 5vw, 5rem) !important;
+        padding-right: 2rem !important;
+        padding-top: 0rem !important;
+    }
+    .stVerticalBlock {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto;
+        gap: 0.6rem !important;
+    }
+    
+    .stApp {
+        background-position: right center !important;
+    }
+}

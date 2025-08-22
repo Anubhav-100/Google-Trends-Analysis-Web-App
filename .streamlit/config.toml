@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#2C2C6C"                # Button, highlight color
+backgroundColor = "#ffffffff"            # Main background
+secondaryBackgroundColor = "#fdfeffff"   # Sidebar or widget area
+textColor = "#000000ff"                  # Font color
+
+[server]
+runOnSave = true                       # Reload app when file is saved
+headless = true                        # Required for Streamlit Cloud
+enableCORS = false
+enableXsrfProtection = false
+
