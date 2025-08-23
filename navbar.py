@@ -1,7 +1,10 @@
+# navbar.py
 import textwrap
+import streamlit as st
 
 def render_navbar():
-    return textwrap.dedent("""
+    current_page = st.session_state.get("current_page", "Home")
+    return textwrap.dedent(f"""
     <header class="header">
         <nav class="navbar" role="navigation" aria-label="Main Navigation">
             <input type="checkbox" id="menu-toggle" style="display: none;">
@@ -12,22 +15,13 @@ def render_navbar():
             </label>
             <ul class="navbar-list">
                 <li>
-                    <form action="" method="get">
-                        <input type="hidden" name="page" value="Home">
-                        <input class="nav-button" type="submit" value="Home" title="Go to Home Page" aria-label="Go to Home Page">
-                    </form>
+                    <a class="nav-button {'active' if current_page == 'Home' else ''}" href="?page=Home" target="_self" title="Go to Home Page" aria-label="Go to Home Page">Home</a>
                 </li>
                 <li>
-                    <form action="" method="get">
-                        <input type="hidden" name="page" value="About">
-                        <input class="nav-button" type="submit" value="About" title="Learn more About Us" aria-label="Learn more About Us">
-                    </form>
+                    <a class="nav-button {'active' if current_page == 'About' else ''}" href="?page=About" target="_self" title="Learn more About Us" aria-label="Learn more About Us">About</a>
                 </li>
                 <li>
-                    <form action="" method="get">
-                        <input type="hidden" name="page" value="Contact">
-                        <input class="nav-button" type="submit" value="Contact" title="Contact us" aria-label="Contact us">
-                    </form>
+                    <a class="nav-button {'active' if current_page == 'Contact' else ''}" href="?page=Contact" target="_self" title="Contact us" aria-label="Contact us">Contact</a>
                 </li>
             </ul>
         </nav>
