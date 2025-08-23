@@ -22,9 +22,14 @@ if not navbar_html:
     navbar_html = "<nav><!-- Default navbar --></nav>"
 st.markdown(navbar_html, unsafe_allow_html=True)         
 
-raw_page = st.query_params.get("page", "Home")  
+# Agar pehle se session_state me page nahi hai → default Home
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "Home"
+
+# Agar query param aya hai to session_state update karo
+raw_page = st.query_params.get("page", st.session_state.current_page)
 page = raw_page[0] if isinstance(raw_page, list) else raw_page
-page = page.capitalize() 
+page = page.capitalize()
 
 # Update session_state with current page
 st.session_state.current_page = page
