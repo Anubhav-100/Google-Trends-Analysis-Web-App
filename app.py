@@ -31,8 +31,8 @@ raw_page = st.query_params.get("page", st.session_state.current_page)
 page = raw_page[0] if isinstance(raw_page, list) else raw_page
 page = page.capitalize()
 
-# Update session_state with current page
 st.session_state.current_page = page
+st.query_params["page"] = page
 
 if page == "Home":
     Home.show()
