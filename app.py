@@ -24,7 +24,10 @@ st.markdown(navbar_html, unsafe_allow_html=True)
 
 raw_page = st.query_params.get("page", "Home")  
 page = raw_page[0] if isinstance(raw_page, list) else raw_page
-page = page.capitalize()  # Capitalize for consistent matching
+page = page.capitalize() 
+
+# Update session_state with current page
+st.session_state.current_page = page
 
 if page == "Home":
     Home.show()
