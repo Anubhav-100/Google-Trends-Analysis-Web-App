@@ -67,8 +67,8 @@ def show():
                 st.code(e.stderr)
 
             with st.spinner("Redirecting to Dashboard..."):
-                st.query_params.update({"page": "Dashboard"})
-                st.rerun()
+                st.query_params["page"] = "Dashboard"   # Query param set kar
+                st.rerun()  
 
         else:
             st.warning("⚠️ Please fill all the fields.")
