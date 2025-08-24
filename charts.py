@@ -141,7 +141,7 @@ def plot_map(region_data, selected_keyword, selected_geo):
 
 def plot_line(time_data, primary):
     df = time_data
-    fig = px.line(df, x='date', y=primary, markers=True, hover_name='date')
+    fig = px.line(df, x='date', y=primary, markers=True, hover_name='date', render_mode='webgl', template='seaborn')
     fig.update_traces(marker=dict(size=scale_marker(10), color="red", symbol="circle",
                                   line=dict(width=2, color="darkblue")))
     fig.update_layout(
@@ -177,6 +177,7 @@ def plot_allline(time_data, selected_keywords):
                      tickfont=dict(size=scale_font(16)))
     fig.update_xaxes(title='DATE', title_font=dict(size=scale_font(20), color='white'),
                      tickfont=dict(size=scale_font(16)))
+    fig.update_traces(mode="lines", fill="tonexty")
     return fig
 
 def plot_scatter(region_data, keywords):
