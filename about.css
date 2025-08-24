@@ -1,3 +1,7 @@
+html {
+    font-size: 0.67rem;
+}
+
 .about-header {
     text-align: center;
     margin-bottom: clamp(1rem, 2vw, 2rem);
@@ -49,6 +53,10 @@
 }
 
 @media (max-width: 48rem) {
+    html {
+    font-size: 1rem;
+   }
+
     .about-header h1 {
         font-size: clamp(1.6rem, 6vw, 2.2rem);
     }

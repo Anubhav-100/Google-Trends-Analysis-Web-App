@@ -5,27 +5,27 @@ import geopandas as gpd
 import streamlit as st
 
 # ----------------- Responsive helper functions -----------------
-def scale_height(base=950):
+def scale_height(base=900):
     screen_width = st.session_state['screen_width']
     if screen_width < 480:
-        return int(base*0.63) 
-    if screen_width < 769:
-        return int(base*0.745) 
+        return int(base*0.61) 
+    if screen_width < 768:
+        return int(base*0.7) 
     elif screen_width < 900:
         return int(base*0.8) 
     else:
         return base
 
-def scale_font(base=16):
+def scale_font(base=20):
     screen_width = st.session_state['screen_width']
     if screen_width < 769:
-        return int(base*0.7)
+        return int(base*0.72)
     elif screen_width < 900:
         return int(base*0.85)
     else:
         return base
 
-def scale_marker(base=10):
+def scale_marker(base=20):
     screen_width = st.session_state['screen_width']
     if screen_width < 769:
         return int(base*0.5)

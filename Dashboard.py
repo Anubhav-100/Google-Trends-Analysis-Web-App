@@ -23,7 +23,7 @@ def show():
         st.error("❌ Data not found. Please submit from Home page.")
         return
     
-    if st.session_state['screen_width'] < 768:
+    if st.session_state['screen_width'] < 680:
         with st.container():
             st.markdown('<div class="btn-grid-sentinel" aria-hidden="true"></div>', unsafe_allow_html=True)
             st.markdown("<h1>Google Trends Analysis Dashboard</h1>", unsafe_allow_html=True)

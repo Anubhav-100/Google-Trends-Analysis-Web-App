@@ -1,35 +1,36 @@
-/*----------------------------
-   TextInput
-----------------------------*/
+html {
+    font-size: 10.72px;
+}
+
 div.stTextInput {
     width: 100%;
-    max-width: clamp(300px, 80vw, 800px);
+    max-width: clamp(18rem, 80vw, 50rem); /* 300px → 18rem, 800px → 50rem */
     margin: clamp(0.5rem, 2vw, 1rem) auto;
     padding: clamp(0.5rem, 2vw, 1rem);
-    border-radius: clamp(10px, 2vw, 15px);
-    box-shadow: 0 0 clamp(5px, 2vw, 15px) #00000000;
+    border-radius: clamp(0.625rem, 2vw, 0.9375rem); /* 10px → 0.625rem, 15px → 0.9375rem */
+    box-shadow: 0 0 clamp(0.3125rem, 2vw, 0.9375rem) #00000000;
     box-sizing: border-box;
 }
 
 div.stTextInput > label {
-    font-size: clamp(1.2rem, 4vw, 30px) !important;
+    font-size: clamp(1.2rem, 4vw, 1.875rem) !important; /* 30px → 1.875rem */
     color: #000;
     font-weight: bold;
-    margin-bottom: clamp(4px, 1vh, 6px);
+    margin-bottom: clamp(0.25rem, 1vh, 0.375rem); /* 4px → 0.25rem, 6px → 0.375rem */
     display: block;
 }
 
 .stTextInput > div[data-baseweb="input"] {
-    border-radius: clamp(6px, 1vw, 8px);
-    border: 1px solid #000;
-    box-shadow: 0 0 clamp(4px, 1vw, 6px) #000000d0;
+    border-radius: clamp(0.375rem, 1vw, 0.5rem); /* 6px → 0.375rem, 8px → 0.5rem */
+    border: 0.0625rem solid #000; /* 1px → 0.0625rem */
+    box-shadow: 0 0 clamp(0.25rem, 1vw, 0.375rem) #000000d0;
     transition: 0.3s ease;
     width: 100%;
 }
 
 input[type="text"] {
-    padding: 0 clamp(12px, 2vw, 16px);
-    font-size: clamp(1rem, 2vw, 20px);
+    padding: 0 clamp(0.75rem, 2vw, 1rem); /* 12px → 0.75rem, 16px → 1rem */
+    font-size: clamp(1rem, 2vw, 1.25rem); /* 20px → 1.25rem */
     color: #000;
     background: #fff;
     width: 100%;
@@ -37,19 +38,19 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border: clamp(1px, 0.3vw, 1.5px) solid #003cffd0;
+    border: clamp(0.0625rem, 0.3vw, 0.0938rem) solid #003cffd0; /* 1px–1.5px */
 }
 
 input::placeholder {
     color: #aaa;
     font-style: italic;
-    font-size: clamp(0.8rem, 1.5vw, 15px);
+    font-size: clamp(0.8rem, 1.5vw, 0.9375rem); /* 15px → 0.9375rem */
 }
 
 div.stTextInput:hover {
     background-color: #003cffd0;
     transform: scale(1.03);
-    box-shadow: 0 0 clamp(6px, 1vw, 10px) #000;
+    box-shadow: 0 0 clamp(0.375rem, 1vw, 0.625rem) #000; /* 6px–10px */
     cursor: pointer;
 }
 div.stTextInput:hover > label {
@@ -64,13 +65,13 @@ div.stTextInput:hover > label {
 }
 
 .stButton > button {
-    font-size: clamp(0.9rem, 2vw, 16px);
+    font-size: clamp(0.9rem, 2vw, 1rem);
     background-color: #131312;
     color: #fff;
-    padding: clamp(0.6rem, 1.5vw, 12px) clamp(1.5rem, 5vw, 30px);
-    border-radius: clamp(6px, 1.5vw, 10px);
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.5rem, 5vw, 1.875rem); /* 12px–30px */
+    border-radius: clamp(0.375rem, 1.5vw, 0.625rem); /* 6px–10px */
     font-weight: bold;
-    box-shadow: 0 0 clamp(6px, 1vw, 10px) #000;
+    box-shadow: 0 0 clamp(0.375rem, 1vw, 0.625rem) #000;
     transition: all 0.3s ease;
     margin: clamp(1rem, 5vh, 3rem) auto 0 auto;
     width:auto !important;
@@ -83,7 +84,7 @@ div.stTextInput:hover > label {
     background-color: #fff;
     color: #000;
     transform: scale(1.05);
-    box-shadow: 0 0 clamp(6px, 1vw, 10px) #0d00ff;
+    box-shadow: 0 0 clamp(0.375rem, 1vw, 0.625rem) #0d00ff;
     cursor: pointer;
 }
 
@@ -92,32 +93,32 @@ div.stTextInput:hover > label {
 ----------------------------*/
 div.stSelectbox {
     width: 100%;
-    max-width: clamp(300px, 80vw, 800px);
+    max-width: clamp(18rem, 80vw, 50rem); /* 300px–800px */
     margin: clamp(0.5rem, 2vw, 1rem) auto;
     padding: clamp(0.5rem, 2vw, 1rem);
-    border-radius: clamp(10px, 2vw, 15px);
-    box-shadow: 0 0 clamp(5px, 2vw, 15px) #00000000;
+    border-radius: clamp(0.625rem, 2vw, 0.9375rem);
+    box-shadow: 0 0 clamp(0.3125rem, 2vw, 0.9375rem) #00000000;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
 }
 
 div.stSelectbox > label {
-    font-size: clamp(1.2rem, 4vw, 30px) !important;
+    font-size: clamp(1.2rem, 4vw, 1.875rem) !important;
     color: #000;
     font-weight: bold;
-    margin-bottom: clamp(4px, 1vh, 6px);
+    margin-bottom: clamp(0.25rem, 1vh, 0.375rem);
     display: block;
 }
 
 div[data-baseweb="select"] > div {
     background: #fff;
     color: #000;
-    padding: 0 clamp(12px, 2vw, 16px);
-    font-size: clamp(1rem, 2vw, 20px);
-    border-radius: clamp(6px, 1vw, 8px);
-    border: 1px solid #000;
-    box-shadow: 0 0 clamp(4px, 1vw, 6px) #000000d0;
+    padding: 0 clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    border-radius: clamp(0.375rem, 1vw, 0.5rem);
+    border: 0.0625rem solid #000;
+    box-shadow: 0 0 clamp(0.25rem, 1vw, 0.375rem) #000000d0;
     transition: 0.3s ease;
     width: 100%;
     box-sizing: border-box;
@@ -126,7 +127,7 @@ div[data-baseweb="select"] > div {
 div.stSelectbox:hover {
     background-color: #003cffd0;
     transform: scale(1.03);
-    box-shadow: 0 0 clamp(6px, 1vw, 10px) #000;
+    box-shadow: 0 0 clamp(0.375rem, 1vw, 0.625rem) #000;
     cursor: pointer;
 }
 div.stSelectbox:hover > label {
@@ -134,7 +135,7 @@ div.stSelectbox:hover > label {
 }
 
 div[data-baseweb="select"]:focus-within > div {
-    border: clamp(1px, 0.3vw, 1.5px) solid #003cffd0;
+    border: clamp(0.0625rem, 0.3vw, 0.0938rem) solid #003cffd0;
 }
 
 p {
@@ -154,7 +155,11 @@ h1 {
 /*----------------------------
    Mobile Fixes
 ----------------------------*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) { /* 768px → 48rem */
+    html {
+        font-size: 1rem;
+    }
+
     .stButton > button {
         width: fit-content !important;
         max-width: 100% !important;

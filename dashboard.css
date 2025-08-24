@@ -1,75 +1,84 @@
 .stElementContainer {
-   width: 100% !important;
+    width: 100% !important;
 }
 
+.stColumn {
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 .stButton > button {
-    font-size: clamp(0.7rem, 2.5vw, 1.2rem);   
-    padding: clamp(0.1rem, 1.5vw, 0.8rem) clamp(0.5rem, 3vw, 1.2rem);
-    border-radius: clamp(0.4rem, 1vw, 0.8rem);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
+    padding: clamp(0.1rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1.2rem);
+    border-radius: clamp(0.4rem, 0.8vw, 0.8rem);
 
-    /* Adjusted for 3 columns */
-    width: clamp(6.5rem, 20vw, 10rem); 
-    height: clamp(2rem, 6vw, 4rem); 
+    /* Adjusted for 3 columns, scaled for 100% zoom */
+    width: clamp(6.5rem, 18vw, 10rem);
+    height: clamp(1rem, 5vw, 4rem);
 
     font-weight: bolder;
-    background-color: #131312;
+    background-color: #000000;
     line-height: 0.8;
-    color: #ffffff;
-    box-shadow: 0 0 clamp(0.4rem, 1vw, 0.8rem) rgba(0, 0, 0, 0.4);
+    color: #fd0000;
+    box-shadow: 0 0 clamp(0.4rem, 0.8vw, 0.8rem) rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
     margin-bottom: 0;
-    margin-top: clamp(0.5rem, 2vw, 1.5rem);
+    margin-top: clamp(0.5rem, 1.5vw, 1.5rem);
 }
 
 .stButton > button:hover {
     background-color: #ffffff;
     color: #000000;
     transform: scale(1.05);
-    box-shadow: 0 0 clamp(0.3rem, 1vw, 0.7rem) #0d00ff;
+    box-shadow: 0 0 clamp(0.3rem, 0.8vw, 0.7rem) #0d00ff;
     cursor: pointer;
 }
 
 div.stSelectbox {
     width: 95%;
-    max-width: clamp(300px, 80vw, 800px);
-    margin: 0.5rem 0 !important;
-    margin-bottom: 0rem !important;
-    background-color:#000000;
-    padding: 0 0.25rem;
-    border-radius: clamp(10px, 2vw, 15px);
+    max-width: clamp(18rem, 70vw, 50rem);
+    margin: auto 0 !important;
+    margin-bottom: 0 !important;
+    background-color: #000000;
+    padding: 0 clamp(0.25rem, 0.5vw, 0.25rem);
+    border-radius: clamp(0.625rem, 1.5vw, 0.9375rem);
     box-shadow: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
 }
 
 div.stSelectbox > label {
-    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+    font-size: clamp(0.5rem, 2.5vw, 1.2rem) !important;
     color: #ffffff;
     font-weight: bold;
     margin-bottom: 0;
-    display: block;
-    padding: 0 0.25rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 clamp(0.25rem, 0.5vw, 0.25rem) !important;
 }
 
 div[data-baseweb="select"] > div {
     background: #fff;
     color: #ff0000;
     font-weight: 600;
-    height:auto !important;
+    height: auto !important;
     padding: 0 !important;
     margin: 0 !important;
-    font-size: clamp(1rem, 2vw, 20px);
-    border-radius: clamp(6px, 1vw, 8px);
-    border: 1px solid #000;
-    box-shadow: 0 0 clamp(4px, 1vw, 6px) #000000d0;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    border-radius: clamp(0.375rem, 0.8vw, 0.5rem);
+    border: clamp(0.0625rem, 0.1vw, 0.0625rem) solid #000;
+    box-shadow: 0 0 clamp(0.25rem, 0.8vw, 0.375rem) #000000d0;
     transition: 0.3s ease;
     width: 100%;
     box-sizing: border-box;
 }
 
-div[data-baseweb="select"] > div > div{
-    padding: 0.5rem 0.75rem !important;
+div[data-baseweb="select"] > div > div {
+    padding: 0.1rem 1rem !important;
 }
 
 p {
@@ -84,29 +93,31 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center !important;
-    font-size: clamp(1.5rem, 5vw, 3.5rem) !important; 
-    line-height: 1.2;
+    font-size: clamp(1.5rem, 4vw, 3.5rem) !important;
     color: #ffffff !important;
+    background-color: #000000 !important;
+    border-radius: clamp(0.4rem, 0.8vw, 0.8rem);
     padding-top: 0 !important;
-    margin-top: clamp(0px, 1vw, 1.4rem) !important;
-    padding-bottom: 1rem !important;
+    margin-bottom: clamp(1rem, 2vw, 1rem) !important;
+    margin-top: clamp(0rem, 2vw, 1rem) !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 [data-testid="stHeaderActionElements"] {
     display: none !important;
 }
 
-@media (max-width: 769px) {
-
+@media (max-width: 48rem) {
     div[data-testid="stVerticalBlock"]:has(.btn-grid-sentinel)
         div[data-testid="stHorizontalBlock"] {
         display: grid !important;
-        grid-template-columns: 1fr 1fr 1fr !important; /* 3 columns */
-        gap: 0rem !important;
-        justify-items: center !important; 
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 0 !important;
+        justify-items: center !important;
     }
 
-    /* Make each column take full available width of its grid cell */
     div[data-testid="stVerticalBlock"]:has(.btn-grid-sentinel)
         div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
         width: auto !important;
@@ -114,13 +125,11 @@ h1 {
         max-width: none !important;
     }
 
-    /* Make Streamlit buttons fill their third-row neatly on mobile */
     div[data-testid="stVerticalBlock"]:has(.btn-grid-sentinel) .stButton > button {
         width: 100% !important;
         max-width: none !important;
     }
 
-    /* Ensure sentinel doesn't occupy space visually */
     .btn-grid-sentinel {
         height: 0 !important;
         width: 0 !important;
@@ -128,7 +137,6 @@ h1 {
         display: block !important;
     }
 
-    /* Also hide the tiny iframe again in mobile media context */
     iframe[src*="streamlit_javascript"] {
         display: none !important;
         width: 0 !important;
@@ -137,20 +145,21 @@ h1 {
     }
 
     .stButton > button {
-        width: 100% !important;    
-        max-width: none !important; 
-        line-height: 1; 
+        width: 100% !important;
+        max-width: none !important;
+        height: 1rem !important;
+        line-height: 1;
         margin: 0 !important;
     }
 
     div.stSelectbox {
         width: 100% !important;
-        max-width: none !important;  
-        margin: 0.1rem auto !important;
+        max-width: none !important;
+        margin: 0 !important;
     }
 
-    div[data-baseweb="select"] > div > div{
-        padding: 0rem 0.75rem !important;
+    div[data-baseweb="select"] > div > div {
+        padding: 0rem 0.75 !important;
     }
 
     h1 {
@@ -158,11 +167,11 @@ h1 {
         display: flex;
         align-items: center;
         justify-content: center !important;
-        font-size: clamp(1.5rem, 5vw, 3.5rem) !important; 
+        font-size: clamp(1.5rem, 4vw, 3.5rem) !important;
         line-height: 1.2;
         color: #ffffff !important;
         padding: 0 !important;
         margin-top: 0 !important;
-        margin-bottom: 1rem !important;
+        margin-bottom: clamp(1rem, 2vw, 1rem) !important;
     }
 }
