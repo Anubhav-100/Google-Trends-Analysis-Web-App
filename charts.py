@@ -48,12 +48,7 @@ def plot_bar(region_data, primary):
     )
         
     fig.update_layout(
-        hoverlabel=dict(
-        bgcolor="#8be0ea",
-        font_size=13,
-        font_color="black",
-        bordercolor="orange"
-       ),
+        hoverlabel=dict(bgcolor="#8be0ea", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': f"Top Locations by Interest in '{primary.title()}'",
                'y': 0.97, 'x': 0.5, 'xanchor': 'center','yanchor': 'top'},
         height=scale_height(),
@@ -111,7 +106,9 @@ def plot_map(region_data, selected_keyword, selected_geo):
         gdf = gpd.read_file("data/ne_10m_admin_1_states_provinces.shp")
         gdf = gdf[gdf["iso_a2"] == selected_geo]
         gdf = gdf.rename(columns={"name": "geoname"})
-    merged = gdf.merge(region_data, on="geoname", how="left")
+    merged = gdf.merge(region_data, on="geoname", how="left"
+    )
+    
     fig = px.choropleth(
         merged,
         geojson=merged.geometry,
@@ -122,6 +119,7 @@ def plot_map(region_data, selected_keyword, selected_geo):
         projection="equirectangular",
         color_continuous_scale="Viridis",
     )
+    
     fig.update_geos(fitbounds="locations",
                     showcoastlines=True, coastlinecolor="Black",
                     showland=True, landcolor="rgb(217, 217, 217)",
@@ -133,12 +131,7 @@ def plot_map(region_data, selected_keyword, selected_geo):
     )
     
     fig.update_layout(
-        hoverlabel=dict(
-        bgcolor="#a3e9ad",
-        font_size=13,
-        font_color="black",
-        bordercolor="orange"
-       ),
+        hoverlabel=dict(bgcolor="#a3e9ad",font_size=13,font_color="black",bordercolor="orange"),
         title={'text': "Search Interest by Locations", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
         height=scale_height(),
         title_font=dict(size=scale_font(24), color='white', family='Arial Black'),
@@ -166,6 +159,7 @@ def plot_line(time_data, primary):
         title_font=dict(size=scale_font(24), color='white'),
         margin=dict(t=60,b=50,l=60,r=30)
     )
+    
     fig.update_yaxes(title=primary.upper(), title_font=dict(size=scale_font(20), color='white'),
                      tickfont=dict(size=scale_font(16)))
     fig.update_xaxes(title='DATE', title_font=dict(size=scale_font(20), color='white'),
@@ -188,6 +182,7 @@ def plot_allline(time_data, selected_keywords):
         margin=dict(t=60,b=50,l=60,r=30),
         showlegend=False
     )
+    
     fig.update_yaxes(title='SEARCH INTEREST', title_font=dict(size=scale_font(20), color='white'),
                      tickfont=dict(size=scale_font(16)))
     fig.update_xaxes(title='DATE', title_font=dict(size=scale_font(20), color='white'),
@@ -199,6 +194,7 @@ def plot_scatter(region_data, keywords):
     df = region_data[["geoname"] + [kw.lower() for kw in keywords]]
     df = df.melt(id_vars="geoname", var_name="Keyword", value_name="Interest")
     fig = px.scatter(df, y="geoname", x="Interest", color="Keyword", hover_name="geoname")
+    
     fig.update_layout(
         hoverlabel=dict(bgcolor="#ddec9d", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': "Scatter Plot of Search Interest by Location", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
@@ -209,6 +205,7 @@ def plot_scatter(region_data, keywords):
         margin=dict(t=60,b=50,l=60,r=30),
         showlegend=False
     )
+    
     fig.update_xaxes(title='SEARCH INTEREST', title_font=dict(size=scale_font(20)), tickfont=dict(size=scale_font(16)))
     fig.update_yaxes(title='LOCATIONS', title_font=dict(size=scale_font(20)), tickmode='array', tickvals=[], tickfont=dict(size=scale_font(16)))
     return fig
