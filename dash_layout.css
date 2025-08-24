@@ -42,7 +42,7 @@ html {
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
     ),
-    url("https://wallpaperaccess.com/full/5580734.jpg");
+    url("https://www.baltana.com/files/wallpapers-5/Light-Background-HD-Wallpapers-16374.jpg");
     background-size: cover;
     background-position: right center;  
     background-repeat: no-repeat;
@@ -56,8 +56,8 @@ html {
     }
 
     .block-container {
-        padding-left: 0.1rem !important;
-        padding-right: 0.1rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
         padding-top: 0 !important;
         margin: 0 !important;
         gap: 0.5rem !important;

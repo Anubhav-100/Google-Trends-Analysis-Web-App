@@ -48,6 +48,12 @@ def plot_bar(region_data, primary):
     )
         
     fig.update_layout(
+        hoverlabel=dict(
+        bgcolor="#8be0ea",
+        font_size=13,
+        font_color="black",
+        bordercolor="orange"
+       ),
         title={'text': f"Top Locations by Interest in '{primary.title()}'",
                'y': 0.97, 'x': 0.5, 'xanchor': 'center','yanchor': 'top'},
         height=scale_height(),
@@ -87,6 +93,7 @@ def plot_donut(time_data, keywords):
         showlegend=False
     )])
     fig.update_layout(
+        hoverlabel=dict(bgcolor="#e77e7e", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': "Average Search Interest", 'y': 0.97, 'x': 0.5,
                'xanchor': 'center', 'yanchor': 'top',
                'font': dict(size=scale_font(22), color='white', family='Arial Black')},
@@ -126,6 +133,12 @@ def plot_map(region_data, selected_keyword, selected_geo):
     )
     
     fig.update_layout(
+        hoverlabel=dict(
+        bgcolor="#a3e9ad",
+        font_size=13,
+        font_color="black",
+        bordercolor="orange"
+       ),
         title={'text': "Search Interest by Locations", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
         height=scale_height(),
         title_font=dict(size=scale_font(24), color='white', family='Arial Black'),
@@ -145,6 +158,7 @@ def plot_line(time_data, primary):
     fig.update_traces(marker=dict(size=scale_marker(10), color="red", symbol="circle",
                                   line=dict(width=2, color="darkblue")))
     fig.update_layout(
+        hoverlabel=dict(bgcolor="#aac5f8", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': f"Trend Over Time: {primary.upper()}", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
         height=scale_height(),
         paper_bgcolor='black',
@@ -165,6 +179,7 @@ def plot_allline(time_data, selected_keywords):
         trace.update(marker=dict(size=scale_marker(8), color=trace.line.color,
                                  symbol="circle", line=dict(width=1, color="black")))
     fig.update_layout(
+        hoverlabel=dict(bgcolor="#eea0dd", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': "Keywords Search Interest Over Time", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
         height=scale_height(),
         paper_bgcolor='black',
@@ -185,6 +200,7 @@ def plot_scatter(region_data, keywords):
     df = df.melt(id_vars="geoname", var_name="Keyword", value_name="Interest")
     fig = px.scatter(df, y="geoname", x="Interest", color="Keyword", hover_name="geoname")
     fig.update_layout(
+        hoverlabel=dict(bgcolor="#ddec9d", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': "Scatter Plot of Search Interest by Location", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
         height=scale_height(),
         paper_bgcolor='black',
