@@ -6,7 +6,7 @@ import streamlit as st
 
 # ----------------- Responsive helper functions -----------------
 def scale_height(base=900):
-    screen_width = st.session_state['screen_width']
+    screen_width = st.session_state['screen_width'] 
     if screen_width < 480:
         return int(base*0.61) 
     if screen_width < 768:

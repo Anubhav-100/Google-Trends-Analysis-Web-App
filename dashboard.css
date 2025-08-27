@@ -12,7 +12,6 @@
     padding: clamp(0.1rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1.2rem);
     border-radius: clamp(0.4rem, 0.8vw, 0.8rem);
 
-    /* Adjusted for 3 columns, scaled for 100% zoom */
     width: clamp(6.5rem, 18vw, 10rem);
     height: clamp(1rem, 5vw, 4rem);
 
