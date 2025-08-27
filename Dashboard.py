@@ -49,8 +49,8 @@ def show():
                         if st.button(button_labels[i+2], key=button_keys[i+2]):
                             st.session_state["selected_chart"] = button_keys[i+2]
 
-            selected_keyword = st.selectbox("Keywords", options=keywords, key="keyword_select_mobile")
-            st.session_state["selected_keyword"] = selected_keyword
+            selected_keyword = st.selectbox("Keywords", options=[col.upper() for col in keywords], key="keyword_select_mobile")
+            selected_keyword = selected_keyword.lower()
 
     else:
         with st.container():
@@ -66,8 +66,8 @@ def show():
                         if st.button(label, key=key):
                             st.session_state["selected_chart"] = key
             with keyword_col:
-                selected_keyword = st.selectbox("Keywords", options=keywords, key="keyword_select_desktop")
-                st.session_state["selected_keyword"] = selected_keyword
+                selected_keyword = st.selectbox("Keywords", options=[col.upper() for col in keywords], key="keyword_select_desktop")
+                selected_keyword = selected_keyword.lower()
 
 # --- Display selected chart ---
     chart = st.session_state.get("selected_chart", "bar")

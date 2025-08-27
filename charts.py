@@ -108,7 +108,7 @@ def plot_map(region_data, selected_keyword, selected_geo):
         gdf = gdf.rename(columns={"name": "geoname"})
     merged = gdf.merge(region_data, on="geoname", how="left"
     )
-    
+       
     fig = px.choropleth(
         merged,
         geojson=merged.geometry,
