@@ -50,7 +50,7 @@ def show():
                             st.session_state["selected_chart"] = button_keys[i+2]
 
             selected_keyword = st.selectbox("Keywords", options=[col.upper() for col in keywords], key="keyword_select_mobile")
-            selected_keyword = selected_keyword.lower()
+            selected_keyword = selected_keyword.lower()   #add lower()
 
     else:
         with st.container():
