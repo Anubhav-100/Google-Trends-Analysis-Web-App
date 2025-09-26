@@ -41,6 +41,7 @@ def plot_bar(region_data, primary):
         top15,
         x=primary,
         y="geoname",
+        text="geoname",
         orientation='h',
         color=primary,
         color_continuous_scale="viridis",
@@ -147,9 +148,7 @@ def plot_map(region_data, selected_keyword, selected_geo):
 
 def plot_line(time_data, primary):
     df = time_data
-    fig = px.line(df, x='date', y=primary, markers=True, hover_name='date', render_mode='webgl', template='seaborn')
-    fig.update_traces(marker=dict(size=scale_marker(10), color="red", symbol="circle",
-                                  line=dict(width=2, color="darkblue")))
+    fig = px.line(df, x='date', y=primary, text=primary, markers=True, hover_name='date', render_mode='svg', template='seaborn')
     fig.update_layout(
         hoverlabel=dict(bgcolor="#aac5f8", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': f"Trend Over Time: {primary.upper()}", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
@@ -164,14 +163,32 @@ def plot_line(time_data, primary):
                      tickfont=dict(size=scale_font(16)))
     fig.update_xaxes(title='DATE', title_font=dict(size=scale_font(20), color='white'),
                      tickfont=dict(size=scale_font(16)))
+    fig.update_traces(
+        marker=dict(size=scale_marker(12), color="red", symbol="circle",
+                   line=dict(width=2, color="darkblue")),
+        textposition='top center',  
+        textfont=dict(size=scale_font(16), color='red') 
+    )
     return fig
 
 def plot_allline(time_data, selected_keywords):
     df = time_data
     fig = px.line(df, x='date', y=selected_keywords, markers=True)
-    for trace in fig.data:
-        trace.update(marker=dict(size=scale_marker(8), color=trace.line.color,
-                                 symbol="circle", line=dict(width=1, color="black")))
+    
+    fig.update_traces(fill="tonexty")
+    
+    # Phir markers ko explicitly set karein
+    for i, trace in enumerate(fig.data):
+        trace.update(
+            mode='lines+markers', 
+            marker=dict(
+                size=scale_marker(12), 
+                color=trace.line.color, 
+                symbol="circle",
+                line=dict(width=2, color="black") 
+            )
+        )
+        
     fig.update_layout(
         hoverlabel=dict(bgcolor="#eea0dd", font_size=13, font_color="black", bordercolor="orange"),
         title={'text': "Keywords Search Interest Over Time", 'y':0.98,'x':0.5,'xanchor':'center','yanchor':'top'},
@@ -187,7 +204,6 @@ def plot_allline(time_data, selected_keywords):
                      tickfont=dict(size=scale_font(16)))
     fig.update_xaxes(title='DATE', title_font=dict(size=scale_font(20), color='white'),
                      tickfont=dict(size=scale_font(16)))
-    fig.update_traces(mode="lines", fill="tonexty")
     return fig
 
 def plot_scatter(region_data, keywords):
